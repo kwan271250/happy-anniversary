@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary ❤️ For Heart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-content">
+            <div class="heart-loader">
+                <div></div><div></div><div></div>
+            </div>
+            <h2 class="loading-text">กำลังเปิดบันทึกความทรงจำ...</h2>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </div>
+
+    <button id="music-btn" class="music-btn" aria-label="Toggle Music">
+        <i class="fas fa-music"></i>
+        <audio id="bg-music" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+        </audio>
+    </button>
+
+    <canvas id="galaxy-canvas"></canvas>
+    <div class="nebula-overlay"></div>
+    <div class="moon" id="moon"></div>
+
+    <main class="main-container">
+        
+        <section class="counter-section glass-card">
+            <h1 class="main-title">Happy Anniversary</h1>
+            <div class="heart-pulse">❤️</div>
+            <h2 class="sub-title">For Heart</h2>
+            
+            <div class="timer-container">
+                <div class="time-box">
+                    <span id="days" class="time-num">00</span>
+                    <span class="time-label">วัน</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours" class="time-num">00</span>
+                    <span class="time-label">ชั่วโมง</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes" class="time-num">00</span>
+                    <span class="time-label">นาที</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="time-num">00</span>
+                    <span class="time-label">วินาที</span>
+                </div>
+            </div>
+            <p class="start-date">ตั้งแต่: 06 กุมภาพันธ์ 2567</p>
+        </section>
+
+        <section class="envelope-section">
+            <div class="envelope-wrapper" id="envelope-wrapper">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter" id="letter">
+                        <div class="letter-text">
+                            <h3>ถึง... เจ้าความรัก ของฉัน</h3>
+                            <p id="typing-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="envelope-hint">✨ กดที่ซองจดหมายเพื่อเปิดอ่าน ✨</div>
+            </div>
+        </section>
+
+        <section class="book-section">
+            <div class="book" id="memory-book">
+                <div class="page cover-page active" data-page="1">
+                    <div class="page-content">
+                        <h2>Our Story Book</h2>
+                        <i class="fas fa-book-heart book-icon"></i>
+                        <p>สมุดบันทึกเรื่องราวของเรา</p>
+                        <span class="flip-hint">เปิดหน้าถัดไป <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <div class="page" data-page="2">
+                    <div class="page-content">
+                        <h3>จุดเริ่มต้นของเรา</h3>
+                        <p>วันแรกที่ได้รู้จักกัน โลกใบเดิมก็เริ่มเปลี่ยนไป... ขอบคุณโชคชะตาที่ทำให้เราได้มาเจอกันนะ</p>
+                        <div class="page-footer">หน้า 1 / 3</div>
+                    </div>
+                </div>
+
+                <div class="page" data-page="3">
+                    <div class="page-content">
+                        <h3>ความทรงจำดีๆ</h3>
+                        <p>ทุกรอยยิ้ม ทุกเสียงหัวเราะ และในทุก ๆ วันที่มีเธออยู่ด้วย มันคือช่วงเวลาที่มีค่าที่สุดสำหรับฉันเลย</p>
+                        <div class="page-footer">หน้า 2 / 3</div>
+                    </div>
+                </div>
+
+                <div class="page" data-page="4">
+                    <div class="page-content">
+                        <h3>จับมือกันแบบนี้ตลอดไปนะ</h3>
+                        <p>ไม่ว่าจะเจออะไรข้างหน้า ขอให้รู้ไว้ว่าจะมีฉันอยู่ข้าง ๆ เธอเสมอ รักเธอนะครับ ❤️</p>
+                        <div class="page-footer">หน้า 3 / 3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-controls">
+                <button id="prev-page-btn" class="btn-control" disabled><i class="fas fa-chevron-left"></i> ย้อนกลับ</button>
+                <button id="next-page-btn" class="btn-control">ถัดไป <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title"><i class="fas fa-images"></i> เมมโมรี่แกลเลอรี่</h2>
+            <div class="polaroid-grid">
+                
+                <div class="polaroid-card" data-index="1">
+                    <div class="polaroid-img-wrapper">
+                        <img src="assets/img1.jpg" alt="Memory 1" class="gallery-img">
+                    </div>
+                    <div class="polaroid-caption">รอยยิ้มแรกของเธอ 📸</div>
+                </div>
+
+                <div class="polaroid-card" data-index="2">
+                    <div class="polaroid-img-wrapper">
+                        <img src="assets/img2.jpg" alt="Memory 2" class="gallery-img">
+                    </div>
+                    <div class="polaroid-caption">เดทแรกของเรา ☕</div>
+                </div>
+
+                <div class="polaroid-card" data-index="3">
+                    <div class="polaroid-img-wrapper">
+                        <img src="assets/img3.jpg" alt="Memory 3" class="gallery-img">
+                    </div>
+                    <div class="polaroid-caption">ทุกที่ที่มีเธอ 🌊</div>
+                </div>
+
+                <div class="polaroid-card" data-index="4">
+                    <div class="polaroid-img-wrapper">
+                        <img src="assets/img4.jpg" alt="Memory 4" class="gallery-img">
+                    </div>
+                    <div class="polaroid-caption">จับมือกันไว้เนอะ 🤝</div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged view">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <canvas id="fx-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
